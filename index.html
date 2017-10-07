@@ -69,49 +69,51 @@
 	renderer.setPixelRatio(window.devicePixelRatio);
 	document.getElementById('stage').appendChild(renderer.domElement);
 
-	  
-    //modelPath = 'src/handspiner.json';
-/*	modelPath = 'src/handspiner.json';
-    let loader = new THREE.JSONLoader();
+	modelPath = '/src/bear.json';
+	//modelPath = '/Users/yoshimurahiroyuki/workspace/threejs/src/handspiner.json';
+/*
+	let loader = new THREE.JSONLoader();
     loader.load( modelPath, loadCallBack);
-
+*/
 
 	let loader = new THREE.JSONLoader();　　
     loader.load(modelPath, function(geo, mat) {　　　
-      let faceMat = new THREE.MeshFaceMaterial(mat);　　　
-      let model = new THREE.Mesh(geo, faceMat);　　　
+	  console.log("come3");
+	 //一旦コメントアウト
+	 // let faceMat = new THREE.MeshFaceMaterial(mat);　　　
+      let model = new THREE.Mesh(geo, mat);
       model.position.set(0, -5, 0);　　　
       model.scale.set(10, 10, 10);　　　
       scene.add(model);　　　
 	  //requestAnimationFrame(rendering, renderer.domElement);　
       renderer.render(scene, camera);
     });　
-*/
-  renderer.render(scene, camera);
+
+//  renderer.render(scene, camera);
 /*
   function render () {
-      requestAnimationFrame(render);
+    requestAnimationFrame(render);
 
-	  box.rotation.y += 0.01;
-      renderer.render(scene, camera);
-
-      render();
+	box.rotation.y += 0.01;
+    renderer.render(scene, camera);
+    render();
   }
-	  
+
   render();
-*/  
-  
+*/
   })();
 
-	  /*
+
   function loadCallBack(geometry, materials){
 	  //今回使用した熊のデータはmaterial=undefinedなので使わない。
+	  console.log("ozaki");
 	 var faceMaterial  = new THREE.MeshNormalMaterial();//法線マップにする（簡単に立体的に見せるため）
 	 json = new THREE.Mesh( geometry, faceMaterial );
 	 json.scale.set( 20, 20, 20 );
 	 json.position.y-=100;
-	 scene.add( json );
-  }*/
+	 //scene.add( json );
+	 //scene.add( json );
+  }
 
 
 
